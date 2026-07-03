@@ -84,14 +84,14 @@ During runtime testing based on the Correctover Conformance Protocol, we observe
 ## Verification
 
 This diagnostic is based on:
-- 20,206 verified API calls from production workflows
+- 20,071 verified API calls from production workflows
 - Independent verification by giskard09/argentum-core (Axis 4 fork-matrix)
 - Cross-validation by babyblueviper1/preaction-governance-conformance
 - Public CVE records and security research
 
 ## References
 
-- Zenodo DOI: 10.5281/zenodo.xxxxxxx (pending)
+- Zenodo DOI: [10.5281/zenodo.21166867](https://doi.org/10.5281/zenodo.21166867)
 - GitHub: https://github.com/Correctover/standards
 - SPEC-v1: Required(τ)/Supported(τ) framework
 - Related CVEs: CVE-2026-56274, CVE-2026-30615, CVE-2026-21852
