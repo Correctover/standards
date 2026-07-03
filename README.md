@@ -1,7 +1,7 @@
 # Correctover Agent Conformance Standards
 
 > Production-grade reliability standards for agentic systems.
-> Based on 20,206 verified API calls across 420 fault classes and 50,000 conformance test cases.
+> Based on 20,071 verified API calls across 50,000 conformance test cases.
 
 ## What This Is
 
@@ -82,7 +82,7 @@ All Correctover standards documents and diagnostic reports are archived with per
 
 This specification is grounded in rigorous empirical analysis:
 
-- **20,206 verified API calls** from production agent systems (ground truth)
+- **20,071 verified API calls** from production agent systems (ground truth)
 - **50,000 synthetic conformance test cases** via statistical modeling of production distributions
 - **19,251 uncovered failure paths** identified in current mainstream implementations
 
