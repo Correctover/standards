@@ -119,3 +119,15 @@ Implementation code: Apache 2.0
 ---
 
 *Correctover: Because failover switches. Correctover verifies.*
+
+## Reproducible Research
+
+All empirical claims in this repository are backed by verifiable testing infrastructure.
+
+| Document | Contents |
+|----------|----------|
+| [METHODOLOGY-aggregated-statistics.md](diagnostics/METHODOLOGY-aggregated-statistics.md) | Complete dataset composition, verdict distributions, recovery statistics, negative vector coverage |
+| [DIAG-001](diagnostics/DIAG-001-autogen-aar-trust-governance.md) | AutoGen AAR trust governance gap analysis |
+| [DIAG-002](diagnostics/DIAG-002-mcp-implementation-security-gaps.md) | MCP implementation security gap analysis |
+
+**Data**: 50,000 traces | 13 providers | 8 fault types | 6 negative vectors | Generation seed: 42
