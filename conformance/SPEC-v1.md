@@ -234,11 +234,11 @@ The conformance criteria defined in this specification are grounded in a rigorou
 
 ### 8.1 Production Real-world Experience
 
-- **Scope**: 20,206 verified API calls extracted directly from production agent systems
+- **Scope**: 20,071 verified API calls extracted directly from production agent systems
 - **Definition**: Ground truth observations from real-world execution environments
 - **Value**: Ensures this specification accounts for transient latency, boundary-value jitter, and unexpected runtime states that only manifest under production load
 
-This dataset identifies 420 distinct fault types, providing the empirical foundation for the `recoverability_class` taxonomy (Section 4.2).
+This dataset identifies 14 terminal state types across 6 negative vector categories, providing the empirical foundation for the `recoverability_class` taxonomy (Section 4.2).
 
 ### 8.2 Conformance Test Suite
 
