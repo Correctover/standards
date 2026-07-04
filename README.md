@@ -64,6 +64,15 @@ The Correctover conformance specification has been independently verified by thi
 - **Cross-validation**: Byte-identical comparison with babyblueviper1/preaction-governance-conformance
 - **Significance**: Demonstrates standard portability across independent implementations
 
+### babyblueviper1/preaction-governance-conformance — Transition Verification Completeness
+- **Repository**: [babyblueviper1/preaction-governance-conformance](https://github.com/babyblueviper1/preaction-governance-conformance)
+- **Context**: Production trading system governance — independent mapping of Correctover conformance model to real execution environment
+- **Key Discovery**: Independently identified authorization gap where $12 review position silently linked to $50 execution via incomplete string matching (coin+side only, no size validation) — precise instantiation of Correctover case_2 fault class
+- **Implementation**: `link_mode` field (`size_matched` / `legacy_coin_side_only`) — first staged implementation of Correctover Required(τ)⊆Supported(τ) transition verification
+- **Architecture**: 3-layer verification classification (VERIFIED / LEGACY_LINKED / REFUSED_LINK) enabling backward-compatible adoption
+- **Significance**: Demonstrates that Correctover conformance framework detects real production failures that escape conventional validation. Staged adoption model validates progressive compliance strategy.
+
+
 ## Digital Object Identifiers (DOIs)
 
 All Correctover standards documents and diagnostic reports are archived with permanent DOIs for citation:
