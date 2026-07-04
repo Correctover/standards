@@ -79,9 +79,9 @@ All Correctover standards documents and diagnostic reports are archived with per
 
 | Document | DOI | Status |
 |----------|-----|--------|
-| **SPEC-v1.md** (Conformance Specification) | `10.5281/zenodo.21166867` | Pending |
-| **DIAG-001** (AutoGen Trust Governance Gap Analysis) | `10.5281/zenodo.21166867` | Pending |
-| **DIAG-002** (MCP Protocol Security Gap Analysis, CVSS 10.0) | `10.5281/zenodo.21166867` | Pending |
+| **SPEC-v1.md** (Conformance Specification) | `10.5281/zenodo.21166867` | Active |
+| **DIAG-001** (AutoGen Trust Governance Gap Analysis) | `10.5281/zenodo.21166867` | Active |
+| **DIAG-002** (MCP Protocol Security Gap Analysis, CVSS 10.0) | `10.5281/zenodo.21166867` | Active |
 
 > DOIs are active and resolve to published Zenodo records. All documents are versioned and immutable.
 
