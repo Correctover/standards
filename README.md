@@ -140,3 +140,14 @@ All empirical claims in this repository are backed by verifiable testing infrast
 | [DIAG-002](diagnostics/DIAG-002-mcp-implementation-security-gaps.md) | MCP implementation security gap analysis |
 
 **Data**: 50,000 traces | 13 providers | 8 fault types | 6 negative vectors | Generation seed: 42
+
+## Contact & Discussion
+
+- **Email**: wangguigui@correctover.com
+- **Website**: [correctover.com](https://correctover.com)
+- **Active discussions**:
+  - [microsoft/autogen#7353](https://github.com/microsoft/autogen/issues/7353) — τ framework in production
+  - [microsoft/autogen#7525](https://github.com/microsoft/autogen/issues/7525) — Required(τ)/Supported(τ) adoption
+  - [crewAIInc/crewAI#6025](https://github.com/crewAIInc/crewAI/issues/6025) — Two-layer governance
+
+*We define the standard. Ecosystems implement it.*
