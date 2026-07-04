@@ -88,6 +88,7 @@ All Correctover standards documents are archived with permanent DOIs for citatio
 |----------|-----|--------|
 | SPEC-v1.md + DIAG-001 + DIAG-002 | `10.5281/zenodo.21166867` | ✅ Active |
 | METHODOLOGY + DIAG-002 v2 | `10.5281/zenodo.21184180` | ✅ Active |
+| Governance Framework v1.0 (Methodology + Data Protection + DUA) | `10.5281/zenodo.21191484` | ✅ Active |
 
 ### DOI Reference Transparency
 
