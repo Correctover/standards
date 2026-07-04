@@ -1,15 +1,13 @@
 # Correctover Agent Conformance Standards
 
-> Production-grade reliability standards for agentic systems.
-> Based on 20,071 verified API calls across 50,000 conformance test cases.
+> Conformance specification for agent runtime reliability.
+> Grounded in 20,071 production traces + 29,929 synthetic test cases.
 
 ## What This Is
 
-Correctover defines the **conformance specification** for agent runtime reliability.
-This repository documents the standard, its adoption across major agent frameworks,
-and its alignment with regulatory requirements (EU AI Act, NIST AI RMF).
+This repository documents a **conformance specification** for agent runtime reliability, developed through empirical analysis of production agent workflows. The specification provides a framework for evaluating and improving agent runtime governance.
 
-**We define the standard. Ecosystems implement it.**
+**Purpose**: Provide a reference implementation for runtime verification that frameworks and practitioners can adopt, adapt, or critique.
 
 ## Protocol Overview
 
@@ -41,17 +39,19 @@ Conformance is evaluated across four orthogonal axes:
 
 Full specification: [conformance/SPEC-v1.md](conformance/SPEC-v1.md)
 
-## Ecosystem Adoption
+## Community Discussion & Exploration
 
-See [adoption/map.md](adoption/map.md) for the full adoption map.
+The specification is being discussed across multiple agent framework communities:
 
-| Framework | Status | Reference |
-|-----------|--------|-----------|
-| Microsoft AutoGen | Partial | [#7525](https://github.com/microsoft/autogen/issues/7525), [#7353](https://github.com/microsoft/autogen/issues/7353) |
-| CrewAI | In Progress | [PR #6432](https://github.com/crewAIInc/crewAI/pull/6432), [#4877](https://github.com/crewAIInc/crewAI/issues/4877) |
-| LangGraph | Discussion | [#7303](https://github.com/langchain-ai/langgraph/issues/7303) |
-| Semantic Kernel | Discussion | [#13957](https://github.com/microsoft/semantic-kernel/issues/13957) |
-| PHI-OMEGA | Aligned | [#1](https://github.com/Tuttotorna/PHI-OMEGA-RUNTIME/issues/1) |
+| Framework | Discussion | Status |
+|-----------|-----------|--------|
+| Microsoft AutoGen | [#7525](https://github.com/microsoft/autogen/issues/7525), [#7353](https://github.com/microsoft/autogen/issues/7353) | Technical discussion |
+| CrewAI | [PR #6432](https://github.com/crewAIInc/crewAI/pull/6432), [#4877](https://github.com/crewAIInc/crewAI/issues/4877) | Integration exploration |
+| LangGraph | [#7303](https://github.com/langchain-ai/langgraph/issues/7303) | Early discussion |
+| Semantic Kernel | [#13957](https://github.com/microsoft/semantic-kernel/issues/13957) | Early discussion |
+| PHI-OMEGA | [#1](https://github.com/Tuttotorna/PHI-OMEGA-RUNTIME/issues/1) | Research collaboration |
+
+**Note**: These are community discussions, not official adoptions. The specification is seeking feedback and real-world validation.
 
 ## Independent Verification
 
@@ -72,7 +72,6 @@ The Correctover conformance specification has been independently verified by thi
 - **Architecture**: 3-layer verification classification (VERIFIED / LEGACY_LINKED / REFUSED_LINK) enabling backward-compatible adoption
 - **Significance**: Demonstrates that Correctover conformance framework detects real production failures that escape conventional validation. Staged adoption model validates progressive compliance strategy.
 
-
 ## Digital Object Identifiers (DOIs)
 
 All Correctover standards documents and diagnostic reports are archived with permanent DOIs for citation:
@@ -81,73 +80,52 @@ All Correctover standards documents and diagnostic reports are archived with per
 |----------|-----|--------|
 | **SPEC-v1.md** (Conformance Specification) | `10.5281/zenodo.21166867` | Active |
 | **DIAG-001** (AutoGen Trust Governance Gap Analysis) | `10.5281/zenodo.21166867` | Active |
-| **DIAG-002** (MCP Protocol Security Gap Analysis, CVSS 10.0) | `10.5281/zenodo.21166867` | Active |
+| **DIAG-002** (MCP Protocol Security Gap Analysis) | `10.5281/zenodo.21166867` | Active |
 
 > DOIs are active and resolve to published Zenodo records. All documents are versioned and immutable.
 
-## Data-Driven Validation
+## Empirical Foundation
 
-## Data-Driven Validation
+This specification is grounded in empirical analysis:
 
-This specification is grounded in rigorous empirical analysis:
+### Production Dataset (Core Asset)
+- **20,071 production traces** from real agent workflows
+- **13 LLM providers** covered
+- **30-day observation window**
 
-- **20,071 verified API calls** from production agent systems (ground truth)
-- **50,000 synthetic conformance test cases** via statistical modeling of production distributions
-- **19,251 uncovered failure paths** identified in current mainstream implementations
+### Extended Test Suite (Synthetic Augmentation)
+- **29,929 synthetic test cases** generated to model rare failure modes
+- **50,000 total** when combined with production data
+- **Purpose**: Statistical significance for edge cases not present in production at sufficient volume
 
-Key findings:
-- Single-fault recovery rate: 97.4%
-- Composite-fault recovery rate: ~72%
-- Coverage gap in alternative frameworks: 38.5%
+### Key Findings
+- **Single-fault recovery rate**: 97.4% (from production-derived test scenarios)
+- **Compound-fault recovery rate**: ~72% (from synthetic stress testing)
+- **325 distinct failure modes** identified through production observation and systematic testing
 
-## Regulatory Alignment
+**Critical Distinction**: The 20,071 production traces are the empirical foundation. The 29,929 synthetic cases are a test suite designed to stress-test the system. Claims about production behavior should reference the 20K dataset only.
 
-The Required(τ)/Supported(τ) framework maps directly to EU AI Act Articles 9, 13, 14, and 15,
-providing a verifiable path to conformance for high-risk AI systems.
+**Data Clarity**: See [METHODOLOGY-aggregated-statistics.md](diagnostics/METHODOLOGY-aggregated-statistics.md) for detailed breakdown of production vs. synthetic data.
 
-See [compliance/eu-ai-act-mapping.md](compliance/eu-ai-act-mapping.md).
+## Seeking Adopters
 
----
+This specification is seeking real-world adoption and validation. If you are:
+- Building production agent systems
+- Experiencing runtime reliability issues
+- Interested in runtime verification
 
-## Statement
+We welcome:
+- **Feedback** on the specification
+- **Integration attempts** in your frameworks
+- **Bug reports** and edge cases
+- **Collaboration** on validation studies
 
-**Correctover Standards is an open, community-driven benchmark designed to end the disorder in AI Agent runtime environments. We welcome all developers attempting to solve cross-runtime compatibility challenges to contribute and jointly refine this industrial-grade conformance protocol.**
-
-This specification is not a suggestion—it is a verifiable baseline derived from production reality. 
-Every criterion can be tested, every claim can be reproduced.
-
-We do not seek recognition. We define the standard.
-
----
+Contact: wangguigui@correctover.com
 
 ## License
 
-Standard specification: CC BY 4.0  
-Implementation code: Apache 2.0
+All specification documents are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 
 ---
 
-*Correctover: Because failover switches. Correctover verifies.*
-
-## Reproducible Research
-
-All empirical claims in this repository are backed by verifiable testing infrastructure.
-
-| Document | Contents |
-|----------|----------|
-| [METHODOLOGY-aggregated-statistics.md](diagnostics/METHODOLOGY-aggregated-statistics.md) | Complete dataset composition, verdict distributions, recovery statistics, negative vector coverage |
-| [DIAG-001](diagnostics/DIAG-001-autogen-aar-trust-governance.md) | AutoGen AAR trust governance gap analysis |
-| [DIAG-002](diagnostics/DIAG-002-mcp-implementation-security-gaps.md) | MCP implementation security gap analysis |
-
-**Data**: 50,000 traces | 13 providers | 8 fault types | 6 negative vectors | Generation seed: 42
-
-## Contact & Discussion
-
-- **Email**: wangguigui@correctover.com
-- **Website**: [correctover.com](https://correctover.com)
-- **Active discussions**:
-  - [microsoft/autogen#7353](https://github.com/microsoft/autogen/issues/7353) — τ framework in production
-  - [microsoft/autogen#7525](https://github.com/microsoft/autogen/issues/7525) — Required(τ)/Supported(τ) adoption
-  - [crewAIInc/crewAI#6025](https://github.com/crewAIInc/crewAI/issues/6025) — Two-layer governance
-
-*We define the standard. Ecosystems implement it.*
+*Correctover Standards Team | [correctover.com](https://correctover.com)*
