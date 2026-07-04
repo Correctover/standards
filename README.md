@@ -3,6 +3,17 @@
 > Conformance specification for agent runtime reliability.
 > Grounded in 20,071 production traces + 29,929 synthetic test cases.
 
+## Governance Status
+
+| Field | Value |
+|-------|-------|
+| Standard Version | v1.0 |
+| Governance Body | Correctover Research |
+| Access Level | Public (Specification) / Academic Restricted (Data) |
+| License | CC BY 4.0 |
+
+---
+
 ## What This Is
 
 This repository documents a **conformance specification** for agent runtime reliability, developed through empirical analysis of production agent workflows. The specification provides a framework for evaluating and improving agent runtime governance.
@@ -49,7 +60,7 @@ The specification is being discussed across multiple agent framework communities
 | CrewAI | [PR #6432](https://github.com/crewAIInc/crewAI/pull/6432), [#4877](https://github.com/crewAIInc/crewAI/issues/4877) | Integration exploration |
 | LangGraph | [#7303](https://github.com/langchain-ai/langgraph/issues/7303) | Early discussion |
 | Semantic Kernel | [#13957](https://github.com/microsoft/semantic-kernel/issues/13957) | Early discussion |
-| PHI-OMEGA | [#1](https://github.com/Tuttotorna/PHI-OMEGA-RUNTIME/issues/1) | Research collaboration |
+| PHI-OMEGA | [#1](https://github.com/Tuttotorna/PHI-OMEGA-RUNTIME/issues/1) | Independent research collaboration |
 
 **Note**: These are community discussions, not official adoptions. The specification is seeking feedback and real-world validation.
 
@@ -59,34 +70,64 @@ The Correctover conformance specification has been independently verified by thi
 
 ### giskard09/argentum-core — Axis 4 Fork-Matrix Verification
 - **Repository**: [giskard09/argentum-core](https://github.com/giskard09/argentum-core)
-- **File**: `examples/conformance/composed-decision-chain-recompute/verify.py`
 - **Implementation**: Complete four-axis conformance verification
 - **Cross-validation**: Byte-identical comparison with babyblueviper1/preaction-governance-conformance
 - **Significance**: Demonstrates standard portability across independent implementations
 
 ### babyblueviper1/preaction-governance-conformance — Transition Verification Completeness
 - **Repository**: [babyblueviper1/preaction-governance-conformance](https://github.com/babyblueviper1/preaction-governance-conformance)
-- **Context**: Production trading system governance — independent mapping of Correctover conformance model to real execution environment
-- **Key Discovery**: Independently identified authorization gap where $12 review position silently linked to $50 execution via incomplete string matching (coin+side only, no size validation) — precise instantiation of Correctover case_2 fault class
-- **Implementation**: `link_mode` field (`size_matched` / `legacy_coin_side_only`) — first staged implementation of Correctover Required(τ)⊆Supported(τ) transition verification
-- **Architecture**: 3-layer verification classification (VERIFIED / LEGACY_LINKED / REFUSED_LINK) enabling backward-compatible adoption
-- **Significance**: Demonstrates that Correctover conformance framework detects real production failures that escape conventional validation. Staged adoption model validates progressive compliance strategy.
+- **Key Discovery**: Independently identified authorization gap where review position silently linked to execution via incomplete string matching — precise instantiation of Correctover case_2 fault class
+- **Implementation**: `link_mode` field — first staged implementation of Required(τ)⊆Supported(τ) transition verification
+- **Significance**: Demonstrates that Correctover conformance framework detects real production failures that escape conventional validation
 
 ## Digital Object Identifiers (DOIs)
 
-All Correctover standards documents and diagnostic reports are archived with permanent DOIs for citation:
+All Correctover standards documents are archived with permanent DOIs for citation:
 
 | Document | DOI | Status |
 |----------|-----|--------|
-| **SPEC-v1.md** (Conformance Specification) | `10.5281/zenodo.21166867` | Active |
-| **DIAG-001** (AutoGen Trust Governance Gap Analysis) | `10.5281/zenodo.21166867` | Active |
-| **DIAG-002** (MCP Protocol Security Gap Analysis) | `10.5281/zenodo.21166867` | Active |
+| SPEC-v1.md + DIAG-001 + DIAG-002 | `10.5281/zenodo.21166867` | ✅ Active |
+| METHODOLOGY + DIAG-002 v2 | `10.5281/zenodo.21184180` | ✅ Active |
 
-> DOIs are active and resolve to published Zenodo records. All documents are versioned and immutable.
+### DOI Reference Transparency
+
+The DOI records reference specification documents and diagnostic reports. Some referenced analysis tools (synthetic trace generator, conformance runner) are proprietary and not included in this public repository. This is intentional:
+
+- **Public**: Specification text, diagnostic findings, aggregate statistics, fixture schemas
+- **Under NDA**: Anonymized sample traces (200-500 records) for academic verification
+- **Proprietary**: Raw production traces, proprietary analysis tools, flywheel rule logic
+
+See [DATA-PROTECTION-STATEMENT.md](DATA-PROTECTION-STATEMENT.md) for the full data classification and access policy.
+
+## Benchmark Methodology
+
+All statistical claims in this specification are derived from a documented methodology:
+
+- **Production dataset**: 20,071 traces across 13 LLM providers, 30-day observation window
+- **Synthetic extension**: 29,929 synthetic traces for edge case coverage
+- **Key findings**: 97.4% single-fault recovery, ~72% compound-fault recovery, 325 failure modes
+
+Full methodology: [BENCHMARK-METHODOLOGY.md](BENCHMARK-METHODOLOGY.md)
+
+**Reproducibility**: The formal methodology document (Section 4) provides a complete reproducibility statement distinguishing what is publicly verifiable, what is available under NDA, and what remains proprietary.
+
+## Data Protection & Access
+
+Correctover maintains a structured data access program:
+
+| Tier | Content | Access |
+|------|---------|--------|
+| Tier 1 | Specification & Schema | ✅ Public (CC BY 4.0) |
+| Tier 2 | Aggregate Statistics | ✅ Public (Zenodo DOI) |
+| Tier 3 | Anonymized Sample Traces | 🔒 Under NDA (Data Use Agreement) |
+| Tier 4 | Raw Production Data | 🔒 Proprietary |
+
+For academic verification access: wangguigui@correctover.com
+
+Full policy: [DATA-PROTECTION-STATEMENT.md](DATA-PROTECTION-STATEMENT.md)
+Data Use Agreement template: [DATA-USE-AGREEMENT.md](DATA-USE-AGREEMENT.md)
 
 ## Empirical Foundation
-
-This specification is grounded in empirical analysis:
 
 ### Production Dataset (Core Asset)
 - **20,071 production traces** from real agent workflows
@@ -103,9 +144,7 @@ This specification is grounded in empirical analysis:
 - **Compound-fault recovery rate**: ~72% (from synthetic stress testing)
 - **325 distinct failure modes** identified through production observation and systematic testing
 
-**Critical Distinction**: The 20,071 production traces are the empirical foundation. The 29,929 synthetic cases are a test suite designed to stress-test the system. Claims about production behavior should reference the 20K dataset only.
-
-**Data Clarity**: See [METHODOLOGY-aggregated-statistics.md](diagnostics/METHODOLOGY-aggregated-statistics.md) for detailed breakdown of production vs. synthetic data.
+**Critical Distinction**: The 20,071 production traces are the empirical foundation. The 29,929 synthetic cases are a test suite designed to stress-test the system. Claims about production behavior reference the 20K dataset only.
 
 ## Seeking Adopters
 
