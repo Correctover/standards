@@ -7,7 +7,8 @@
 
 | Field | Value |
 |-------|-------|
-| Standard Version | v1.0 |
+| Standard Version | CCS v1.0 |
+| Canonical Architecture | [ARCHITECTURE.md](ARCHITECTURE.md) |
 | Governance Body | Correctover Research |
 | Access Level | Public (Specification) / Academic Restricted (Data) |
 | License | CC BY 4.0 |
@@ -16,9 +17,42 @@
 
 ## What This Is
 
-This repository documents a **conformance specification** for agent runtime reliability, developed through empirical analysis of production agent workflows. The specification provides a framework for evaluating and improving agent runtime governance.
+This repository documents the **canonical architecture and conformance specification** for agent runtime reliability, developed through empirical analysis of production agent workflows.
 
-**Purpose**: Provide a reference implementation for runtime verification that frameworks and practitioners can adopt, adapt, or critique.
+**Canonical Architecture**: [ARCHITECTURE.md](ARCHITECTURE.md) defines the five-component Correctover Conformance Specification (CCS) v1.0.
+**Conformance Protocol**: [conformance/SPEC-v1.md](conformance/SPEC-v1.md) defines the four-axis verification procedure.
+
+---
+
+## Implementation Hierarchy
+
+| Classification | Description |
+|---------------|-------------|
+| **Reference Implementation** | The canonical architecture and specification maintained by Correctover Research. Serves as the authoritative definition of CCS v1.0. |
+| **Community Implementation** | Third-party projects that adopt subsets or extensions of the CCS v1.0 architecture for interoperability and verification. |
+
+### Reference Implementation (CCS v1.0)
+
+Maintained by Correctover Research. Defines the five-component architecture:
+
+1. **Runtime Observatory** — Execution trace capture with cryptographic integrity
+2. **Fault Taxonomy** — 517-type runtime failure classification system
+3. **Required(τ) ⊆ Supported(τ) Invariant** — Formal conformance criterion for transition validity
+4. **Receipt Schema** — Cryptographic chain integrity verification
+5. **Conformance Protocol** — Four-axis verification framework
+
+### Community Implementations
+
+| Implementation | Components Adopted | Maintainer | Repository |
+|---------------|-------------------|------------|-----------|
+| preaction-governance-conformance | Components 3, 5 | babyblueviper1 | [GitHub](https://github.com/babyblueviper1/preaction-governance-conformance) |
+| PHI-OMEGA-RUNTIME | Components 1, 3, 4 | Tuttotorna (M. Brighindi) | [GitHub](https://github.com/Tuttotorna/PHI-OMEGA-RUNTIME) |
+| argentum-core | Components 4, 5 | giskard09 | [GitHub](https://github.com/giskard09/argentum-core) |
+| ibex-agent-verification | Components 3, 4 | safal207 | [GitHub](https://github.com/safal207/ibex-agent-verification) |
+
+> Community Implementations are valuable adoption indicators demonstrating the structural necessity of the Correctover architecture. They are independently maintained and acknowledge the source architecture for interoperability.
+
+---
 
 ## Protocol Overview
 
