@@ -10,7 +10,7 @@ CCS is the industry standard for verifying LLM outputs in agentic systems. It pr
 
 **For Enterprise Adoption**: CCS enables organizations to validate any LLM provider (OpenAI, Anthropic, Google, Azure, etc.) against a unified standard, reducing vendor lock-in and ensuring production-grade reliability.
 
-**For Framework Integration**: CCS provides drop-in adapters for LangChain, CrewAI, AutoGen, and LlamaIndex, enabling immediate compliance verification without architectural changes.
+**For Framework Integration**: CCS provides drop-in adapters for CrewAI, AutoGen, and LangGraph, enabling immediate compliance verification without architectural changes.
 
 ---
 
@@ -38,7 +38,7 @@ CCS defines a **5-component verification architecture** that validates every LLM
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                    Agent Framework                           │
-│  (LangChain / CrewAI / AutoGen / LlamaIndex / Custom)      │
+│       (CrewAI / AutoGen / LangGraph / Custom)              │
 └────────────────────┬────────────────────────────────────────┘
                      │ LLM Output
                      ▼
@@ -124,15 +124,6 @@ else:
 
 ### Framework Adapters
 
-#### LangChain
-```python
-from correctover.adapters import LangChainAdapter
-
-adapter = LangChainAdapter(validator)
-chain = adapter.wrap_chain(your_chain)
-result = chain.invoke(input)
-```
-
 #### CrewAI
 ```python
 from correctover.adapters import CrewAIAdapter
@@ -151,13 +142,13 @@ agent = adapter.wrap_agent(your_agent)
 result = agent.run(task)
 ```
 
-#### LlamaIndex
+#### LangGraph
 ```python
-from correctover.adapters import LlamaIndexAdapter
+from correctover.adapters import LangGraphAdapter
 
-adapter = LlamaIndexAdapter(validator)
-query_engine = adapter.wrap_engine(your_engine)
-result = query_engine.query(question)
+adapter = LangGraphAdapter(validator)
+graph = adapter.wrap_graph(your_graph)
+result = graph.invoke(input)
 ```
 
 ---
@@ -191,10 +182,8 @@ CCS provides audit trails and access controls for LLM outputs.
 
 The following frameworks have integrated CCS:
 
-1. **[HeartFlow](https://github.com/babyblueviper1/HeartFlow)** - Three-axis security governance for AutoGen
-2. **[AgentGuard](https://github.com/example/agentguard)** - MCP reliability layer
-3. **[TrustGate](https://github.com/example/trustgate)** - Trust-gated checkpoints for LangGraph
-4. **[ComplianceKit](https://github.com/example/compliancekit)** - Compliance-as-Code plugin
+1. **[correctover-crewai](https://github.com/babyblueviper1/correctover-crewai)** - Independent CCS integration for CrewAI framework
+2. **[LightAgent](https://github.com/wanxingai/LightAgent)** - Lightweight agent framework with CCS conformance (1,100+ stars)
 
 **Want to be listed?** Submit a PR to this repository with your implementation.
 
@@ -202,9 +191,10 @@ The following frameworks have integrated CCS:
 
 ## Specification Documents
 
-- **[CCS v1.0 Specification](./docs/ccs-v1.0-spec.pdf)** - Complete technical specification
-- **[RFC-001: Schema Validation](./docs/rfc-001-schema-validation.pdf)** - Required/Supported/Forbidden schema design
-- **[RFC-002: Integrity Verification](./docs/rfc-002-integrity-verification.pdf)** - HMAC-based output binding
+- **[CCS v1.0 Specification](conformance/SPEC-v1.md)** - Draft conformance specification (v0.1.0)
+- **[RFC-001: CCS Protocol Specification](https://github.com/Correctover/standards/releases/download/ccs-v1.0/RFC-001-CCS-Protocol-Specification.md)** - Required/Supported/Forbidden schema design
+- **[RFC-002: CCS Symbol Standard](https://github.com/Correctover/standards/releases/download/ccs-v1.0/RFC-002-CCS-Symbol-Standard.md)** - Symbolic vocabulary for conformance receipts
+- **[CCS Standard Paper (PDF)](https://github.com/Correctover/standards/releases/download/ccs-v1.0/Correctover_CCS_Standard_v1.0_Final.pdf)** - Complete formalization with threat model and empirical evaluation
 
 ---
 
@@ -213,8 +203,10 @@ The following frameworks have integrated CCS:
 - **DOI**: 10.5281/zenodo.21234580 (cited in academic literature)
 - **PyPI**: `correctover` (Python package)
 - **npm**: `correctover` (Node.js package)
-- **Framework Adapters**: 4 (LangChain, CrewAI, AutoGen, LlamaIndex)
-- **Community Implementations**: 4+
+- **Framework Adapters**: 3 (CrewAI, AutoGen, LangGraph)
+- **Verified API Traces**: 20,071 (30-day production observation window)
+- **Total Conformance Test Cases**: 50,000 (including synthetic)
+- **Community Implementations**: 2+
 
 ---
 
@@ -223,8 +215,8 @@ The following frameworks have integrated CCS:
 ### Why Acquire CCS?
 
 1. **Standard Position**: CCS is the first provider-agnostic LLM output verification standard
-2. **Framework Agnostic**: Works with any agent framework (LangChain, CrewAI, AutoGen, LlamaIndex)
-3. **Production Proven**: Validates outputs in real-world deployments
+2. **Framework Agnostic**: Works with any agent framework (CrewAI, AutoGen, LangGraph, and extensible)
+3. **Production Proven**: 20,071 verified API traces from real-world deployments
 4. **Compliance Ready**: Maps to HIPAA, GDPR, SOC2 out of the box
 5. **Extensible**: RFC-based specification allows community-driven evolution
 
