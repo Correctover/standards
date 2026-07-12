@@ -204,8 +204,12 @@ The following frameworks have integrated CCS:
 - **PyPI**: `correctover` (Python package)
 - **npm**: `correctover` (Node.js package)
 - **Framework Adapters**: 3 (CrewAI, AutoGen, LangGraph)
-- **Verified API Traces**: 20,071 (30-day production observation window)
-- **Total Conformance Test Cases**: 50,000 (including synthetic)
+- **Verified API Traces**: 20,071 (30-day production observation window, 2026-05-30 to 2026-06-29)
+- **Synthetic Test Cases**: 29,929 (6 categories, E1-E6)
+- **Total Conformance Test Cases**: 50,000 (20,071 production + 29,929 synthetic)
+- **Total Verified Interactions**: 80,000+ (including 30,000+ subsequent accumulation)
+- **Distinct Failure Modes**: 325 (~200 production + ~125 synthetic)
+- **Single-Fault Recovery Rate**: 97.4% (4,887/5,017)
 - **Community Implementations**: 2+
 
 ---
