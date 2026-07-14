@@ -1,11 +1,12 @@
-# Correctover Conformance Architecture (CCA)
+# Correctover Conformance Standard (CCS) — Architecture Specification
 
 **Document Status**: Canonical Specification  
 **Version**: 1.0.0  
 **Date**: 2026-07-06  
 **Classification**: Normative Reference  
 **License**: CC BY 4.0  
-**DOI**: [10.5281/zenodo.21166867](https://doi.org/10.5281/zenodo.21166867)
+**Part of**: CCS v1.0 (DOI: [10.5281/zenodo.21234580](https://doi.org/10.5281/zenodo.21234580))  
+**Architecture DOI**: [10.5281/zenodo.21166867](https://doi.org/10.5281/zenodo.21166867)
 
 ---
 

@@ -1,9 +1,10 @@
-# Conformance Protocol v0.1
+# CCS — Conformance Protocol v0.1
 
 **Document Status**: Draft Specification  
 **Version**: 0.1.0  
 **Date**: 2026-07-03  
 **Classification**: Normative Reference  
+**Part of**: CCS v1.0 (DOI: [10.5281/zenodo.21234580](https://doi.org/10.5281/zenodo.21234580))  
 
 ---
 

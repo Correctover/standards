@@ -192,8 +192,6 @@ The following frameworks have integrated CCS:
 ## Specification Documents
 
 - **[CCS v1.0 Specification](conformance/SPEC-v1.md)** - Draft conformance specification (v0.1.0)
-- **[RFC-001: CCS Protocol Specification](https://github.com/Correctover/standards/releases/download/ccs-v1.0/RFC-001-CCS-Protocol-Specification.md)** - Required/Supported/Forbidden schema design
-- **[RFC-002: CCS Symbol Standard](https://github.com/Correctover/standards/releases/download/ccs-v1.0/RFC-002-CCS-Symbol-Standard.md)** - Symbolic vocabulary for conformance receipts
 - **[CCS Standard Paper (PDF)](https://github.com/Correctover/standards/releases/download/ccs-v1.0/Correctover_CCS_Standard_v1.0_Final.pdf)** - Complete formalization with threat model and empirical evaluation
 
 ---
