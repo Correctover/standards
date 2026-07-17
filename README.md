@@ -1,6 +1,11 @@
 # Correctover Conformance Specification (CCS)
 
-**Version 1.0** | **DOI**: [10.5281/zenodo.21234580](https://doi.org/10.5281/zenodo.21234580) | **License**: CC BY-NC-SA 4.0
+**Version 1.0**
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21234580.svg)](https://doi.org/10.5281/zenodo.21234580)
+![License](https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-green.svg)
+
+---
 
 ---
 
