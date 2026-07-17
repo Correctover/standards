@@ -11,9 +11,9 @@
 
 ## Executive Summary
 
-CCS is the industry standard for verifying LLM outputs in agentic systems. It provides a **provider-agnostic, framework-agnostic** conformance protocol that ensures AI agents produce reliable, compliant, and cost-controlled outputs.
+CCS is the runtime security standard for the MCP ecosystem. It provides a **provider-agnostic, framework-agnostic** conformance protocol that ensures AI agents produce secure, compliant, and cost-controlled outputs — blocking injection attacks, preventing credential hijacking, and enforcing output integrity at runtime.
 
-**For Enterprise Adoption**: CCS enables organizations to validate any LLM provider (OpenAI, Anthropic, Google, Azure, etc.) against a unified standard, reducing vendor lock-in and ensuring production-grade reliability.
+**For Enterprise Adoption**: CCS enables organizations to enforce runtime security policies across any LLM provider (OpenAI, Anthropic, Google, Azure, etc.), ensuring production-grade security conformance and reducing vendor lock-in.
 
 **For Framework Integration**: CCS provides drop-in adapters for CrewAI, AutoGen, and LangGraph, enabling immediate compliance verification without architectural changes.
 
@@ -22,14 +22,15 @@ CCS is the industry standard for verifying LLM outputs in agentic systems. It pr
 ## Why CCS Matters
 
 ### The Problem
-LLM outputs are non-deterministic. Agents that rely on LLM decisions without validation face:
+LLM outputs are non-deterministic and attacker-controllable. Agents that rely on LLM decisions without runtime enforcement face:
+- **Injection attacks** (prompt injection, tool poisoning, command injection)
+- **Credential hijacking** (API key exfiltration, token theft, SSRF)
 - **Compliance violations** (HIPAA, GDPR, SOC2)
 - **Cost overruns** (token waste, runaway loops)
-- **Security vulnerabilities** (injection attacks, data leakage)
 - **Unreliable behavior** (hallucinations, format drift)
 
 ### The Solution
-CCS defines a **5-component verification architecture** that validates every LLM output against:
+CCS defines a **5-component runtime security architecture** that validates every LLM output against:
 1. **Required(τ)** - Fields that must be present
 2. **Supported(τ)** - Fields that can be present
 3. **Forbidden(τ)** - Fields that must not be present
@@ -72,27 +73,27 @@ CCS defines a **5-component verification architecture** that validates every LLM
 ## The 5 Components
 
 ### 1. CCS-Core
-Core validation engine. Validates LLM outputs against Required/Supported/Forbidden schemas.
+Core security enforcement engine. Validates LLM outputs against Required/Supported/Forbidden schemas.
 
 **Use Case**: Ensure every LLM response contains required fields (e.g., `decision`, `confidence`, `trace_id`) and rejects malformed outputs.
 
 ### 2. CCS-Compliance
-Regulatory compliance engine. Maps LLM outputs to compliance frameworks (HIPAA, GDPR, SOC2).
+Runtime compliance enforcement. Maps LLM outputs to compliance frameworks (HIPAA, GDPR, SOC2).
 
 **Use Case**: Healthcare agents must not output PHI without authorization. CCS-Compliance validates PII redaction.
 
 ### 3. CCS-Cost-Flow-Analysis
-Token budget enforcement. Prevents cost overruns from runaway agents.
+Cost security enforcement. Prevents cost overruns from runaway agents and token abuse.
 
 **Use Case**: Cap daily token spend at $100. CCS-Cost-Flow-Analysis blocks requests that would exceed the budget.
 
 ### 4. CCS-Integrity
-Output integrity verification. HMAC-based binding prevents tampering.
+Output integrity protection. HMAC-based binding prevents tampering and replay attacks.
 
 **Use Case**: Financial agents must produce auditable outputs. CCS-Integrity provides cryptographic proof of output authenticity.
 
 ### 5. CCS-Audit
-Comprehensive audit logging. Every validation decision is logged for traceability.
+Immutable security audit logging. Every validation decision is logged for forensic traceability.
 
 **Use Case**: SOC2 compliance requires audit trails. CCS-Audit provides immutable logs of all validation decisions.
 
@@ -221,9 +222,9 @@ The following frameworks have integrated CCS:
 
 ### Why Acquire CCS?
 
-1. **Standard Position**: CCS is the first provider-agnostic LLM output verification standard
+1. **Standard Position**: CCS is the first runtime security standard for the MCP ecosystem
 2. **Framework Agnostic**: Works with any agent framework (CrewAI, AutoGen, LangGraph, and extensible)
-3. **Production Proven**: 20,071 verified API traces from real-world deployments
+3. **Production Proven**: 20,071 verified API traces + 506 real vulnerabilities discovered across major MCP repositories
 4. **Compliance Ready**: Maps to HIPAA, GDPR, SOC2 out of the box
 5. **Extensible**: RFC-based specification allows community-driven evolution
 
