@@ -246,3 +246,66 @@ Implementation: Proprietary (commercial license available)
 - **PyPI**: https://pypi.org/project/correctover
 - **npm**: https://www.npmjs.com/package/correctover
 - **GitHub**: https://github.com/Correctover
+
+---
+
+## 🔒 Security Research
+
+We publish detailed security audits of MCP server implementations:
+
+→ [**mcp-security-audits**](https://github.com/Correctover/mcp-security-audits)
+
+**Findings to date:**
+- **506** security findings across 3 major repositories
+- **5** vulnerability types confirmed cross-repo (RCE, SSRF, credential hijacking, path traversal, privilege escalation)
+- **19** CVE-class vulnerabilities identified
+- **215** fault types cataloged in our living fault taxonomy
+- **20** vulnerabilities submitted as ZDI reports
+
+---
+
+## 🔧 Upstream PR Contributions
+
+We don't just report — we fix.
+
+| PR | Framework | Status | Contribution |
+|----|-----------|--------|--------------|
+| [CrewAI#6432](https://github.com/crewAIInc/crewAI/pull/6432) | CrewAI | OPEN (10 commits) | GuardrailProvider — runtime governance protocol |
+| [CrewAI#6411](https://github.com/crewAIInc/crewAI/pull/6411) | CrewAI | Discussion | Runtime verification authority |
+| [ferro-labs#197](https://github.com/ferro-labs/ferro-labs/pull/197) | Ferro Labs | OPEN | Runtime validation integration |
+| [agent-governance-toolkit#3347](https://github.com/microsoft/agent-governance-toolkit/pull/3347) | Microsoft | Under review | Runtime threat scanner (recursive scanning, SSRF fixes) |
+
+---
+
+## 👥 Community Validation
+
+| Researcher | Framework | Contribution |
+|-----------|-----------|-------------|
+| [@pshkv](https://github.com/pshkv) (AutoGen maintainer) | AutoGen | Adopted Required(τ)⊆Supported(τ) framework |
+| [@humbl-dev](https://github.com/humbl-dev) | CrewAI | Two-layer governance testing |
+| [@safal207](https://github.com/safal207) | CrewAI | GuardrailProvider implementation (10 commits) |
+| [@babyblueviper1](https://github.com/babyblueviper1) | Independent | 120,426 independent re-calculations |
+| [@Tuttotorna](https://github.com/Tuttotorna) | PHI-OMEGA | ICLR paper collaboration |
+| [@XYG-LUNA](https://github.com/XYG-LUNA) | CrewAI | Idempotency analysis |
+
+---
+
+## 📦 Ecosystem
+
+| Resource | Link |
+|----------|------|
+| MCP Server (npm) | [correctover-mcp-server](https://www.npmjs.com/package/correctover-mcp-server) |
+| CCS SDK (PyPI) | [correctover](https://pypi.org/project/correctover/) |
+| MCP Server Source (20K dataset + papers) | [Correctover/mcp-server](https://github.com/Correctover/mcp-server) |
+| Security Audits | [Correctover/mcp-security-audits](https://github.com/Correctover/mcp-security-audits) |
+| Agent Governance (fork w/ PRs) | [Correctover/agent-governance-toolkit](https://github.com/Correctover/agent-governance-toolkit) |
+| CCS Integration Kit | [Correctover/ccs-integration-kit](https://github.com/Correctover/ccs-integration-kit) |
+| Website | [correctover.com](https://correctover.com) |
+
+---
+
+## 📫 Contact
+
+**Security reports**: wangguigui@correctover.com  
+**BD / Enterprise**: wangguigui@correctover.com  
+**GitHub**: [@Correctover](https://github.com/Correctover)
