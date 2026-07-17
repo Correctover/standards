@@ -290,6 +290,16 @@ We don't just report — we fix.
 
 ---
 
+## 🔍 Audit Case Studies
+
+506 security findings across 3 major MCP repositories, with 5 cross-repo vulnerability patterns and 8 verified PoCs:
+
+→ [Full audit case studies](https://github.com/Correctover/mcp-server/blob/main/audit-case-studies.md)
+
+Includes: SSRF, command injection, credential exposure, DNS rebinding, authentication bypass — all with source code locations, CVSS scores, and disclosure status.
+
+---
+
 ## 📦 Ecosystem
 
 | Resource | Link |
